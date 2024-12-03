@@ -18,9 +18,7 @@ function SortBy({ options }) {
         value={sortBy}
         onChange={onChangeSelect}
       >
-        <option>
-          <span>Sort By</span>
-        </option>
+        <option>Sort By</option>
         {options.map((option) => (
           <option value={option.value} key={option.value}>
             {option.label}

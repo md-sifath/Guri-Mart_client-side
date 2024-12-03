@@ -1,5 +1,5 @@
 export async function addToCart(cartItem) {
-  const res = await fetch('http://localhost:3000/carts', {
+  const res = await fetch(`https://guri-martserver.vercel.app/carts`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -14,19 +14,24 @@ export async function addToCart(cartItem) {
 }
 
 export async function getCartItem(email) {
-  const res = await fetch(`http://localhost:3000/carts?email=${email}`);
+  const res = await fetch(
+    `https://guri-martserver.vercel.app/carts?email=${email}`,
+  );
   if (!res.ok) throw new Error(res.status);
   const data = await res.json();
   if (data) return data;
 }
 
 export async function deleteCartAll(email) {
-  const res = await fetch(`http://localhost:3000/carts?email=${email}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-type': 'application/json',
+  const res = await fetch(
+    `https://guri-martserver.vercel.app/carts?email=${email}`,
+    {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+      },
     },
-  });
+  );
   if (!res.ok) {
     throw new Error('Cart item is not delete');
   }

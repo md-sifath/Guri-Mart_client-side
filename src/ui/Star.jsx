@@ -5,8 +5,8 @@ function Star({ rating }) {
   return (
     <div className="flex items-center gap-2 text-xl">
       {starArr.map((item) => (
-        <span key={item._id} className="block pb-3 text-yellow-300">
-          <FaStar />
+        <span className="block pb-3 text-yellow-300">
+          <FaStar key={item.name} />
         </span>
       ))}
     </div>

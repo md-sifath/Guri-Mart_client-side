@@ -97,8 +97,9 @@ const ProductCard = ({ item }) => {
         </div>
         <div className="flex justify-center gap-5">
           <button
+            disabled={isPending}
             onClick={handleAddToCart}
-            className="rounded bg-[#1AB293] bg-opacity-95 px-5 py-0 text-white transition-colors duration-300 hover:bg-[#148d75]"
+            className={` ${isPending ? 'w-[137px]' : ''} rounded bg-[#1AB293] bg-opacity-95 px-5 py-0 text-white transition-colors duration-300 hover:bg-[#148d75]`}
           >
             {isPending ? <SpinnerMini /> : 'Add to cart'}
           </button>

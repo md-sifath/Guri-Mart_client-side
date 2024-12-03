@@ -1,5 +1,5 @@
 export async function getProducts() {
-  const res = await fetch('http://localhost:3000/products');
+  const res = await fetch('https://guri-martserver.vercel.app/products');
 
   if (!res.ok) {
     throw new Error(res.statusText);

@@ -1,27 +1,14 @@
 import { useState } from 'react';
+import { HiOutlineHome, HiOutlineLogout } from 'react-icons/hi';
 import {
-  HiCake,
-  HiOutlineHome,
-  HiOutlineLogout,
-  HiOutlineMenu,
-  HiOutlineMenuAlt1,
-  HiOutlineMenuAlt2,
-  HiOutlineMenuAlt4,
-} from 'react-icons/hi';
-import {
-  HiOutlineBookmarkSquare,
   HiOutlineShoppingBag,
   HiOutlineShoppingCart,
-  HiOutlineSquare2Stack,
-  HiOutlineSquare3Stack3D,
-  HiOutlineSquares2X2,
   HiOutlineSquaresPlus,
 } from 'react-icons/hi2';
-import { IoFlaskOutline } from 'react-icons/io5';
+
 import { NavLink } from 'react-router-dom';
 import { useGetUser } from '../Hooks/useGetUser';
 import { useLogout } from '../Hooks/useLogout';
-import { FaDashcube, FaHome, FaShoppingCart } from 'react-icons/fa';
 import { useCart } from '../Hooks/useCart';
 
 function Navbar() {
@@ -40,7 +27,11 @@ function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-start justify-between py-4">
           <div className="flex-shrink-0">
-            <NavLink to="/" className="text-2xl font-bold text-white">
+            <NavLink
+              onClick={() => setIsOpen(false)}
+              to="/"
+              className="text-2xl font-bold text-white"
+            >
               <p className="font-dois text-xl">
                 <span className="font-dancing text-4xl">G</span>uri
                 <span className="font-dancing text-4xl">M</span>art
@@ -50,6 +41,7 @@ function Navbar() {
 
           <div className="hidden items-center space-x-4 lg:flex">
             <NavLink
+              onClick={() => setIsOpen(false)}
               to="/"
               className="rounded-md px-3 py-1 text-base font-normal text-white hover:bg-blue-500"
             >
@@ -58,6 +50,7 @@ function Navbar() {
               </span>
             </NavLink>
             <NavLink
+              onClick={() => setIsOpen(false)}
               to="/products"
               className="rounded-md px-3 py-1 text-base font-normal text-white hover:bg-blue-500"
             >
@@ -67,6 +60,7 @@ function Navbar() {
             </NavLink>
             {user && (
               <NavLink
+                onClick={() => setIsOpen(false)}
                 to="/dashboard"
                 className="text-bsae rounded-md px-3 py-1 font-normal text-white hover:bg-blue-500"
               >
@@ -76,6 +70,7 @@ function Navbar() {
               </NavLink>
             )}
             <NavLink
+              onClick={() => setIsOpen(false)}
               to="/cart"
               className="rounded-md px-3 py-1 text-base font-medium text-white hover:bg-blue-500"
             >
@@ -96,6 +91,7 @@ function Navbar() {
               </button>
             ) : (
               <NavLink
+                onClick={() => setIsOpen(false)}
                 to="/login"
                 className="rounded-md px-3 py-1 text-xl font-medium text-cyan-100 hover:bg-blue-500"
               >
@@ -167,12 +163,24 @@ function Navbar() {
             >
               Cart ({cartData?.length})
             </NavLink>
-            <NavLink
-              onClick={logOut}
-              className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-blue-500"
-            >
-              Logout
-            </NavLink>
+            {user?.email ? (
+              <button
+                onClick={logOut}
+                className="rounded-md px-3 py-1 text-base font-normal text-cyan-200 hover:bg-blue-500"
+              >
+                <span className="flex items-center gap-1">
+                  <HiOutlineLogout /> Logout
+                </span>
+              </button>
+            ) : (
+              <NavLink
+                onClick={() => setIsOpen(false)}
+                to="/login"
+                className="rounded-md px-3 py-1 text-xl font-medium text-cyan-100 hover:bg-blue-500"
+              >
+                Login
+              </NavLink>
+            )}
           </div>
         </div>
       )}

@@ -8,13 +8,16 @@ export function useCartItemQuantity(quantity) {
 
   const { mutate: updateItemQuantity, isPending } = useMutation({
     mutationFn: async (updateData) => {
-      const res = await fetch(`http://localhost:3000/carts/${updateData.id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-type': 'application/json',
+      const res = await fetch(
+        `https://guri-martserver.vercel.app/carts/${updateData.id}`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({ quantity: updateData.newQuantity }),
         },
-        body: JSON.stringify({ quantity: updateData.newQuantity }),
-      });
+      );
 
       if (!res.ok) {
         console.log(res);

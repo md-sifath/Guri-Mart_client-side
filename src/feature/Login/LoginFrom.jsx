@@ -45,7 +45,7 @@ function LoginFrom() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="mb-6 text-center text-2xl font-semibold">
+      <h1 className="mb-6 text-center text-xl font-semibold md:text-2xl">
         Login to your account
       </h1>
       <form onSubmit={handleSubmit} className="bg-gray-50 p-10">

@@ -8,12 +8,15 @@ export function useDeleteCartItem() {
 
   const { mutate, isPending } = useMutation({
     mutationFn: async (id) => {
-      const res = await fetch(`http://localhost:3000/carts/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-type': 'application/json',
+      const res = await fetch(
+        `https://guri-martserver.vercel.app/carts/${id}`,
+        {
+          method: 'DELETE',
+          headers: {
+            'Content-type': 'application/json',
+          },
         },
-      });
+      );
       if (!res.ok) {
         throw new Error(res.status);
       }

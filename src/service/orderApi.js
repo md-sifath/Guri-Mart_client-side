@@ -1,5 +1,5 @@
 export async function CreateOrder(orderData) {
-  const res = await fetch('http://localhost:3000/orders', {
+  const res = await fetch('https://guri-martserver.vercel.app/orders', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -13,7 +13,7 @@ export async function CreateOrder(orderData) {
 }
 
 export async function GetOrderData(email) {
-  const res = await fetch(`http://localhost:3000/orders?email=${email}`);
+  const res = await fetch(`https://guri-martserver.vercel.app/orders?email=${email}`);
 
   if (!res.ok) throw new Error('There a problem to Get the order data');
   const data = await res.json();
@@ -21,7 +21,7 @@ export async function GetOrderData(email) {
 }
 
 export async function GetAllOrder() {
-  const res = await fetch('http://localhost:3000/orders');
+  const res = await fetch('https://guri-martserver.vercel.app/orders');
   if (!res.ok) {
     throw new Error('There is a problem to get the data..Pls try again letter');
   }
