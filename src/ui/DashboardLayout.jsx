@@ -12,9 +12,9 @@ function DashboardLayout() {
   const [isOpen, setIsOpen] = useState();
   return (
     <div className="flex flex-col bg-[#1AB293] text-left">
-      <header className="flex items-center justify-between">
+      <header className="flex items-center justify-between px-4">
         <button
-          className={`${isOpen ? 'pl-14' : 'p-0'} md:hidden`}
+          className={`${isOpen ? 'pl-14' : 'p-0'} lg:hidden`}
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <HiOutlineXMark size={24} /> : <HiOutlineMenu size={24} />}
@@ -23,9 +23,9 @@ function DashboardLayout() {
       </header>
       <div className="flex h-screen flex-1">
         <div
-          className={`${isOpen ? 'w-60' : 'w-0'} flex flex-col bg-[#1AB293] transition-all duration-300 md:w-60`}
+          className={`${isOpen ? 'w-60' : 'w-0'} flex flex-col bg-[#1AB293] transition-all duration-300 lg:w-60`}
         >
-          <ul className={`space-y-4 pl-4 ${isOpen ? '' : 'hidden md:block'}`}>
+          <ul className={`space-y-4 pl-4 ${isOpen ? '' : 'hidden lg:block'}`}>
             <li>
               <NavLink
                 to="/"

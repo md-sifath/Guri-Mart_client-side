@@ -58,7 +58,7 @@ function Dashboard() {
 
   // console.log(chartData);
   return (
-    <div className="mt-5 flex w-full flex-col pl-3 sm:pl-6">
+    <div className="mt-5 flex w-full flex-col pl-3 lg:pl-6">
       <div>
         <h1 className="mb-5 text-lg font-semibold text-gray-800 sm:text-3xl">
           Dashboard

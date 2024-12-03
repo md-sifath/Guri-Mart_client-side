@@ -8,7 +8,15 @@ import {
   HiOutlineMenuAlt2,
   HiOutlineMenuAlt4,
 } from 'react-icons/hi';
-import { HiOutlineShoppingBag, HiOutlineShoppingCart } from 'react-icons/hi2';
+import {
+  HiOutlineBookmarkSquare,
+  HiOutlineShoppingBag,
+  HiOutlineShoppingCart,
+  HiOutlineSquare2Stack,
+  HiOutlineSquare3Stack3D,
+  HiOutlineSquares2X2,
+  HiOutlineSquaresPlus,
+} from 'react-icons/hi2';
 import { IoFlaskOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
 import { useGetUser } from '../Hooks/useGetUser';
@@ -63,7 +71,7 @@ function Navbar() {
                 className="text-bsae rounded-md px-3 py-1 font-normal text-white hover:bg-blue-500"
               >
                 <span className="flex items-center gap-1">
-                  <FaDashcube /> Dashboard
+                  <HiOutlineSquaresPlus /> Dashboard
                 </span>
               </NavLink>
             )}

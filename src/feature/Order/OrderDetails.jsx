@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function OrderDetails() {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+  // console.log(location);
 
   const { data, isLoading } = useQuery({
     queryKey: ['orders', `${location.pathname}`],
@@ -18,7 +18,7 @@ function OrderDetails() {
   });
 
   if (isLoading) return;
-  console.log(data);
+  // console.log(data);
 
   // converts the products data into an array
   const productsArray = Object.values(data.products);
